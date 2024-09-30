@@ -7,18 +7,51 @@
     font-family: "Inter", sans-serif;
 }
 
+:root{
+    /* COLOR VARIABLES */
+    --backgroundColor: #f8f8f8;
+    --bigTextColor: #2e1f55;
+    --smallTextColor: #636363;
+    --outlineColor: #d9d9d9;
+
+    /* TEXT VARIABLES */
+    --headlineTextSize: 3.25rem;
+    --bodyTextSize: 1rem;
+    --buttonTextSize: 1.1rem;
+    --titleTextSize: 1.5rem;
+
+    /* SPACE VARIABLES */
+    --bigPadding: 2rem;
+    --smallPadding: 1rem;
+    --columnGapSpace: 0.75rem;
+    --bigRowGapSpace: 4rem;
+    --mediumRowGap: 1.5rem;
+    --smallRowGapSpace: 1rem;
+    --smallerRowGapSpace: 0.75rem;
+}
+
+/* To define color theme (either light or dark mode)*/
+@media (prefers-color-scheme: dark){
+    :root{
+        --backgroundColor: #230b42;
+        --bigTextColor: #f8f8f8;
+        --smallTextColor: #d9d9d9;
+    }
+}
+
 .card-container{
     width: 35%;
     height: auto;
-    background-color: #f8f8f8;
+    background-color: var(--backgroundColor);
     margin: 4rem auto;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    row-gap: 1.5rem;
+    row-gap: var(--mediumRowGap);
     border-radius: 0.75rem;
+    border: 1px solid var(--outlineColor);
 }
 
 .top-card-container{
@@ -37,7 +70,7 @@
 }
 
 .premium-container p{
-    font-size: 1.5rem;
+    font-size: var(--titleTextSize);
     font-weight: 600;
 }
 
@@ -61,17 +94,24 @@
 }
 
 .figure-container h1{
-    font-size: 2.5rem;
+    font-size: var(--headlineTextSize);
     font-weight: 500;
+    color: var(--bigTextColor);
 }
 
 .figure-container p{
-    font-size: 0.95rem;
+    font-size: var(--bodyTextSize);
+    color: var(--smallTextColor);
 }
 
 .card-details-container{
     width: 100%;
     height: auto;
+}
+
+.card-details-container p{
+    color: var(--smallTextColor);
+    font-size: var(--bodyTextSize);
 }
 
 .bottom-card-container{
@@ -81,7 +121,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    row-gap: 0.4rem;
+    row-gap: var(--smallRowGapSpace);
 }
 
 .card-image-container{
